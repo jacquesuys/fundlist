@@ -1,5 +1,28 @@
 <div ng-controller="FundsCtrl as funds">
+  <div class="search">
+    <input ng-model="searchFund" name="search" placeholder="Search Fund Name or ISIN">
+  </div>
+
   <div ng-repeat="fund in funds">
-    <h3><a href="#">{{ fund["Entity Name"] }}</a></h3>
+    <h3><a href="#">{{ fund["name"] }}</a></h3>
+    <h5>{{ fund["Fund Type Taxonomy Id"] }}</h5>
+    <div class="col-3">
+      <div class="left">
+        <div>Currency</div><div>{{ fund["Fund Size Currency Code"] }}</div>
+        <div>ISIN</div><div>{{ fund["ISIN Code"] }}</div>
+        <div>Asset Class</div><div>{{ fund["Asset Class Taxonomy Id"] }}</div>
+        <div>Region</div><div>{{ fund["Region Taxonomy Id"] }}</div>
+      </div>
+      <div class="middle">
+        <div>Launch Date</div><div>{{ fund["Report Date From"] }}</div>
+      </div>
+      <div class="right">
+        <div>NAV</div><div>{{ fund["NAV Base"] }}</div>
+      </div>
+
+      <div ng-repeat="class in fund['shareClasses']">
+        <span>{{ class['Short Name'] }}</span>
+      </div>
+    </div>
   </div>
 </div>
