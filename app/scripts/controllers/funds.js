@@ -10,6 +10,6 @@
 angular.module('fundlistApp')
   .controller('FundsCtrl', function (fundsService) {
     fundsService.then(function(result){
-      console.log(result.data.funds);
+      console.log(result);
     });
   });

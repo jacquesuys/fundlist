@@ -19,11 +19,6 @@ angular
         controller: 'FundsCtrl',
         controllerAs: 'funds'
       })
-      .when('/funds', {
-        templateUrl: 'views/funds.html',
-        controller: 'FundsCtrl',
-        controllerAs: 'funds'
-      })
       .otherwise({
         redirectTo: '/'
       });
